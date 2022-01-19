@@ -3,7 +3,7 @@ const Car = require('./cars-model.js');
 
 const checkCarId = async (req, res, next) => {
   try {
-    const car = await car.getById(req.params.id);
+    const car = await Car.getById(req.params.id);
     if (!car) {
       next({ status: 404, message: 'Car not found' })
     } else {
